@@ -1,0 +1,43 @@
+/* Allgemeine Einstellungen */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  padding: 15px 0;
+}
+
+.list-group-item a {
+  color: #007bff;
+}
+
+.list-group-item a:hover {
+  text-decoration: underline;
+}
+
+/* Content Bereich */
+.content {
+  margin-left: 250px; /* Platz für die fixierte Sidebar */
+  padding: 20px;
+  background-color: #fff;
+  min-height: 100vh;
+}
