@@ -43,6 +43,10 @@ body {
   text-decoration: underline;
 }
 
+.content {
+  padding: 2rem; /* Standard-Padding (links und rechts) */
+}
+
 /* Standardgrößen für größere Bildschirme */
 h1 {
   font-size: 2.5rem;
@@ -58,6 +62,9 @@ h4 {
 
 /* Anpassung für kleinere Bildschirme */
 @media (max-width: 768px) {
+  .content {
+    padding: 0.5rem; /* Reduziertes Padding */
+  }
   h1 {
     font-size: 1.5rem; /* Kleinere Größe für H1 */
   }
