@@ -42,3 +42,31 @@ body {
 .list-group-item a:hover {
   text-decoration: underline;
 }
+
+/* Standardgrößen für größere Bildschirme */
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+/* Anpassung für kleinere Bildschirme */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem; /* Kleinere Größe für H1 */
+  }
+
+  h2 {
+    font-size: 1.2rem; /* Kleinere Größe für H2 */
+  }
+
+  h4 {
+    font-size: 1rem; /* Kleinere Größe für H4 */
+  }
+}
