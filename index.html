@@ -24,6 +24,11 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link menu-link" href="bewaesserung.html" data-de="Bewässerung" data-th="ระบบชลประทาน">
+                            Bewässerung
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link menu-link" href="bodenvorbereitung.html" data-de="Bodenvorbereitung" data-th="การเตรียมดิน">
                             Bodenvorbereitung
                         </a>
@@ -77,10 +82,10 @@
             </h1>
             
             <section class="mt-4">
-                <p data-de="Als Grundlage für den Inhalt dieser Webseite dienen die Erfahrungen eines aus den USA stammenden Durian-Bauern in der Provinz Chanthaburi (Thailand), der eine Durian-Farm von Grund auf aufgebaut hat. Dabei umfasst sein Wissen alle Schritte – von der Installation der Bewässerungsanlage über die Bodenvorbereitung und Pflanzung der Jungbäume bis hin zur Pflege der Bäume während der ersten fünf Jahre. Zusätzlich wurden diese praktischen Erfahrungswerte mithilfe einer KI ergänzt, um weitere relevante Informationen bereitzustellen."
-                    data-th="เนื้อหาบนเว็บไซต์นี้อ้างอิงจากประสบการณ์ของเกษตรกรชาวอเมริกันที่ปลูกทุเรียนในจังหวัดจันทบุรี ประเทศไทย ซึ่งได้สร้างฟาร์มทุเรียนตั้งแต่เริ่มต้น โดยความรู้ของเขาครอบคลุมทุกขั้นตอน ตั้งแต่การติดตั้งระบบชลประทาน การเตรียมดิน การปลูกต้นทุเรียนอ่อน จนถึงการดูแลต้นทุเรียนในช่วงห้าปีแรก นอกจากนี้ ประสบการณ์จริงเหล่านี้ยังได้รับการเสริมด้วยข้อมูลเพิ่มเติมจากปัญญาประดิษฐ์ (AI) เพื่อให้ข้อมูลที่เกี่ยวข้องเพิ่มเติม.">
-                Als Grundlage für den Inhalt dieser Webseite dienen die Erfahrungen eines aus den USA stammenden Durian-Bauern in der Provinz Chanthaburi (Thailand), der eine Durian-Farm von Grund auf aufgebaut hat. Dabei umfasst sein Wissen alle Schritte – von der Installation der Bewässerungsanlage über die Bodenvorbereitung und Pflanzung der Jungbäume bis hin zur Pflege der Bäume während der ersten fünf Jahre. Zusätzlich wurden diese praktischen Erfahrungswerte mithilfe einer KI ergänzt, um weitere relevante
-                Informationen bereitzustellen.
+                <p data-de="Als Grundlage für den Inhalt dieser Webseite dienen die Erfahrungen eines aus den USA stammenden Durian-Bauern in der Provinz Chanthaburi (Thailand), der eine Mon Thong A-Grade Durian-Farm von Grund auf aufgebaut hat. Dabei umfasst sein Wissen alle Schritte – von der Installation der Bewässerungsanlage über die Bodenvorbereitung und Pflanzung der Jungbäume bis hin zur Pflege der Bäume während der ersten fünf Jahre. Zusätzlich wurden diese praktischen Erfahrungswerte mithilfe einer KI ergänzt, um weitere relevante Informationen bereitzustellen."
+                    data-th="เนื้อหาบนเว็บไซต์นี้อ้างอิงจากประสบการณ์ของเกษตรกรชาวอเมริกันที่ปลูกทุเรียนพันธุ์หมอนทองเกรด A ในจังหวัดจันทบุรี ประเทศไทย ซึ่งได้สร้างฟาร์มทุเรียนตั้งแต่เริ่มต้น โดยความรู้ของเขาครอบคลุมทุกขั้นตอน ตั้งแต่การติดตั้งระบบชลประทาน การเตรียมดิน การปลูกต้นทุเรียนอ่อน จนถึงการดูแลต้นทุเรียนในช่วงห้าปีแรก นอกจากนี้ ประสบการณ์จริงเหล่านี้ยังได้รับการเสริมด้วยข้อมูลเพิ่มเติมจากปัญญาประดิษฐ์ (AI) เพื่อให้ข้อมูลที่เกี่ยวข้องเพิ่มเติม.">
+                    Als Grundlage für den Inhalt dieser Webseite dienen die Erfahrungen eines aus den USA stammenden Durian-Bauern in der Provinz Chanthaburi (Thailand), der eine Durian-Farm (Mon Thong) von Grund auf aufgebaut hat. Dabei umfasst sein Wissen alle Schritte – von der Installation der Bewässerungsanlage über die Bodenvorbereitung und Pflanzung der Jungbäume bis hin zur Pflege der Bäume während der ersten fünf Jahre. Zusätzlich wurden diese praktischen Erfahrungswerte mithilfe einer KI ergänzt,
+                    um weitere relevante Informationen bereitzustellen.
                 </p>
             </section>
 
@@ -226,42 +231,9 @@
         });
     });
 
-
-        // // Dynamisches Laden von Seiten mit Sprachunterstützung
-        // document.querySelectorAll('.menu-link').forEach(link => {
-        //     link.addEventListener('click', function (event) {
-        //         event.preventDefault(); // Standard-Linkverhalten verhindern
-        //         const targetUrl = this.getAttribute('href');
-
-        //         // Laden der Zielseite
-        //         fetch(targetUrl)
-        //             .then(response => {
-        //                 if (!response.ok) {
-        //                     throw new Error(`HTTP-Fehler! Status: ${response.status}`);
-        //                 }
-        //                 return response.text();
-        //             })
-        //             .then(html => {
-        //                 const tempDiv = document.createElement('div');
-        //                 tempDiv.innerHTML = html;
-
-        //                 // Sprache des Inhalts festlegen
-        //                 const language = document.getElementById('de-btn').classList.contains('btn-danger') ? 'de' : 'th';
-
-        //                 // Geladenen Inhalt in #main-content einfügen
-        //                 const loadedContent = tempDiv.querySelector('.content');
-        //                 if (loadedContent) {
-        //                     document.getElementById('main-content').innerHTML = loadedContent.innerHTML;
-
-        //                     // Sprache für den neuen Inhalt anwenden
-        //                     switchLanguage(language);
-        //                 } else {
-        //                     console.error('Fehler: .content konnte in der geladenen Seite nicht gefunden werden.');
-        //                 }
-        //             })
-        //             .catch(err => console.error('Fehler beim Laden:', err));
-        //     });
-        // });
+    function enlargeImage(img) {
+            img.classList.toggle('enlarged'); // Wechsel zwischen Vergrößert und Standard
+        }
 
 
 </script>

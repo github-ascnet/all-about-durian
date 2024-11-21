@@ -35,6 +35,7 @@ body {
 }
 
 .nav-link {
+  font-size: 0.875rem; /* Schriftgröße leicht verkleinern */
   color: #007bff;
 }
 
@@ -61,6 +62,19 @@ h2 {
 
 h4 {
   font-size: 1.3rem;
+}
+
+.small-img {
+  max-width: 100%
+  max-height: 400px; /* Größere Bildhöhe */
+  object-fit: contain; /* Halte das Seitenverhältnis */
+  transition: transform 0.3s ease; /* Sanfter Übergang */
+}
+
+.enlarged {
+  max-height: 120vh; /* Maximal 90% der Bildschirmhöhe */
+  max-width: 100%; /* Maximal 90% der Bildschirmbreite */
+  transform: scale(1.2); /* Leicht skalieren */
 }
 
 /* Anpassung für kleinere Bildschirme */
