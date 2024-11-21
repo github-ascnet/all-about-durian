@@ -16,7 +16,7 @@ body {
 
 /* Content Bereich */
 .content {
-  padding: 20px;
+  padding: 2rem; /* Standard-Padding (links und rechts) */
   min-height: 100vh;
   background-color: #fff;
 }
@@ -48,10 +48,6 @@ body {
 
 .list-group-item a:hover {
   text-decoration: underline;
-}
-
-.content {
-  padding: 2rem; /* Standard-Padding (links und rechts) */
 }
 
 /* Standardgrößen für größere Bildschirme */

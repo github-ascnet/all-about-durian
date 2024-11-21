@@ -167,41 +167,93 @@
         document.getElementById('de-btn').addEventListener('click', () => switchLanguage('de'));
         document.getElementById('th-btn').addEventListener('click', () => switchLanguage('th'));
 
-        // Dynamisches Laden von Seiten mit Sprachunterstützung
+    // Dynamisches Laden von Seiten mit Sprachunterstützung und Smooth Transition
     document.querySelectorAll('.menu-link').forEach(link => {
         link.addEventListener('click', function (event) {
             event.preventDefault(); // Standard-Linkverhalten verhindern
             const targetUrl = this.getAttribute('href');
+            const mainContent = document.getElementById('main-content');
 
-            // Laden der Zielseite
-            fetch(targetUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP-Fehler! Status: ${response.status}`);
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = html;
+            // Smooth Transition: Inhalt ausblenden
+            mainContent.style.transition = 'opacity 0.5s ease-in-out'; // Übergangszeit
+            mainContent.style.opacity = '0'; // Ausblenden starten
 
-                    // Sprache des Inhalts festlegen
-                    const language = document.getElementById('de-btn').classList.contains('btn-danger') ? 'de' : 'th';
+            setTimeout(() => {
+                // Laden der Zielseite
+                fetch(targetUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP-Fehler! Status: ${response.status}`);
+                        }
+                        return response.text();
+                    })
+                    .then(html => {
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = html;
 
-                    // Geladenen Inhalt in #main-content einfügen
-                    const loadedContent = tempDiv.querySelector('.content');
-                    if (loadedContent) {
-                        document.getElementById('main-content').innerHTML = loadedContent.innerHTML;
+                        // Sprache des Inhalts festlegen
+                        const language = document.getElementById('de-btn').classList.contains('btn-danger') ? 'de' : 'th';
 
-                        // Sprache für den neuen Inhalt anwenden
-                        switchLanguage(language);
-                    } else {
-                        console.error('Fehler: .content konnte in der geladenen Seite nicht gefunden werden.');
-                    }
-                })
-                .catch(err => console.error('Fehler beim Laden:', err));
+                        // Geladenen Inhalt in #main-content einfügen
+                        const loadedContent = tempDiv.querySelector('.content');
+                        if (loadedContent) {
+                            mainContent.innerHTML = loadedContent.innerHTML;
+
+                            // Sprache für den neuen Inhalt anwenden
+                            switchLanguage(language);
+                        } else {
+                            console.error('Fehler: .content konnte in der geladenen Seite nicht gefunden werden.');
+                        }
+
+                        // Smooth Transition: Inhalt wieder einblenden
+                        mainContent.style.opacity = '1';
+                    })
+                    .catch(err => {
+                        console.error('Fehler beim Laden:', err);
+
+                        // Bei Fehler Inhalt trotzdem wieder einblenden
+                        mainContent.style.opacity = '1';
+                    });
+            }, 500); // Zeit für das Ausblenden (synchron mit CSS)
         });
     });
+
+
+        // // Dynamisches Laden von Seiten mit Sprachunterstützung
+        // document.querySelectorAll('.menu-link').forEach(link => {
+        //     link.addEventListener('click', function (event) {
+        //         event.preventDefault(); // Standard-Linkverhalten verhindern
+        //         const targetUrl = this.getAttribute('href');
+
+        //         // Laden der Zielseite
+        //         fetch(targetUrl)
+        //             .then(response => {
+        //                 if (!response.ok) {
+        //                     throw new Error(`HTTP-Fehler! Status: ${response.status}`);
+        //                 }
+        //                 return response.text();
+        //             })
+        //             .then(html => {
+        //                 const tempDiv = document.createElement('div');
+        //                 tempDiv.innerHTML = html;
+
+        //                 // Sprache des Inhalts festlegen
+        //                 const language = document.getElementById('de-btn').classList.contains('btn-danger') ? 'de' : 'th';
+
+        //                 // Geladenen Inhalt in #main-content einfügen
+        //                 const loadedContent = tempDiv.querySelector('.content');
+        //                 if (loadedContent) {
+        //                     document.getElementById('main-content').innerHTML = loadedContent.innerHTML;
+
+        //                     // Sprache für den neuen Inhalt anwenden
+        //                     switchLanguage(language);
+        //                 } else {
+        //                     console.error('Fehler: .content konnte in der geladenen Seite nicht gefunden werden.');
+        //                 }
+        //             })
+        //             .catch(err => console.error('Fehler beim Laden:', err));
+        //     });
+        // });
 
 
 </script>
