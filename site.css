@@ -64,17 +64,10 @@ h4 {
   font-size: 1.3rem;
 }
 
-.small-img {
-  max-width: 100%
-  max-height: 400px; /* Größere Bildhöhe */
-  object-fit: contain; /* Halte das Seitenverhältnis */
-  transition: transform 0.3s ease; /* Sanfter Übergang */
-}
-
-.enlarged {
-  max-height: 120vh; /* Maximal 90% der Bildschirmhöhe */
-  max-width: 100%; /* Maximal 90% der Bildschirmbreite */
-  transform: scale(1.2); /* Leicht skalieren */
+.responsive-img {
+  max-width: 40%; /* Standardbreite für größere Viewports */
+  height: auto;
+  transition: all 0.3s ease; /* Sanfter Übergang bei Größenänderung */
 }
 
 /* Anpassung für kleinere Bildschirme */
@@ -92,5 +85,8 @@ h4 {
 
   h4 {
     font-size: 1rem; /* Kleinere Größe für H4 */
+  }
+  .responsive-img {
+    max-width: 90%; /* Breite für Viewports < 768px */
   }
 }
